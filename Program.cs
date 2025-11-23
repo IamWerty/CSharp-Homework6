@@ -6,6 +6,6 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 Piesa p = new Piesa("Наталка Полтавка", "Котляревський", "Драма", 1819);
 p.Show();
-Magazin m = new Magazin("Аврора", "Мікроампер", "Епіцентр");
+Magazin m = new Magazin("Аврора", "вул. Пушкіна", "Господарський");
 m.Show();
 m.Dispose();
