@@ -8,3 +8,4 @@ Piesa p = new Piesa("Наталка Полтавка", "Котляревськи
 p.Show();
 Magazin m = new Magazin("Аврора", "Мікроампер", "Епіцентр");
 m.Show();
+m.Dispose();

@@ -30,8 +30,17 @@ namespace CSharp_Homework6
         {
             if (!disposed)
             {
-                Console.WriteLine($"Викликано Dispose() для магазину: {Name}");
+                Console.WriteLine($"Dispose() для магазину: {Name}");
                 disposed = true;
+                GC.SuppressFinalize(this);
+            }
+        }
+
+        ~Magazin()
+        {
+            if (!disposed)
+            {
+                Console.WriteLine($"Деструктор для магазину: {Name}");
             }
         }
     }

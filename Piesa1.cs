@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace CSharp_Homework6
 {
-    internal class Piesa
+    internal class Piesa : IDisposable
     {
         public string Name { get; set; }
         public string Author { get; set; }
         public string Genre { get; set; }
         public int Year { get; set; }
 
+        private bool disposed = false;
 
         public Piesa(string name, string author, string genre, int year)
         {
@@ -27,9 +28,21 @@ namespace CSharp_Homework6
             Console.WriteLine($"П'єса: {Name}, Автор: {Author}, Жанр: {Genre}, Рік: {Year}");
         }
 
+        public void Dispose()
+        {
+            if (!disposed)
+            {
+                Console.WriteLine($"Dispose() для п'єси: {Name}");
+                disposed = true;
+            }
+        }
+
         ~Piesa()
         {
-            Console.WriteLine($"Деструктор викликано для п'єси: {Name}");
+            if (!disposed)
+            {
+                Console.WriteLine($"Деструктор для п'єси: {Name}");
+            }
         }
     }
 }
